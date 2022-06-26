@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script defer src="./assets/js/appCompra.js"></script>
+  <title>Mi compra</title>
+  <!-- Link de FontAwesome -->
+  <script src="https://kit.fontawesome.com/5cb7d34bd7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="./assets/img/logo.png" alt="Logo Café Oporto" />
+    </a>
+    <nav class="navbar">
+      <a href="./index.html">home</a>
+    </nav>
+    <div class="icons">
+      <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+  </header>
+
+  <section class="home contact">
+    <div class="row">
+      <form action="">
+        <h3>¡Haz tu pedido!</h3>
+        <p>Ingresa tus datos para el delivery</p>
+        <div class="inputBox">
+          <span class="fas fa-user"></span>
+          <input type="text" id="inputNombre" placeholder="nombre" />
+        </div>
+        <div class="inputBox">
+          <span class="fas fa-envelope"></span>
+          <input type="email" id="inputEmail" placeholder="email" />
+        </div>
+        <div class="inputBox">
+          <span class="fas fa-phone"></span>
+          <input type="tel" id="inputTelefono" placeholder="teléfono" />
+        </div>
+        <div class="inputBox">
+          <span class="fa-solid fa-location-dot"></span>
+          <input type="text" id="inputDireccion" placeholder="dirección" />
+        </div>
+        <input type="submit" value="compra" id="submit" class="btn" />
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>

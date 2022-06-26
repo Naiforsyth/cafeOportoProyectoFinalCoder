@@ -6,7 +6,4 @@ class Producto {
     this.nombre = nombre
     this.precio = precio
   }
-  precioFinal() {
-    return parseFloat((this.precio * 1.21).toFixed(2))
-  }
 }
