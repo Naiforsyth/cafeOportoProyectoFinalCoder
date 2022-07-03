@@ -37,6 +37,7 @@ function agregarProducto(e) {
   }
 }
 
+
 //función almacenar los datos del producto a mostrar
 function datosProducto(producto) {
   const infoProducto = {
@@ -49,18 +50,12 @@ function datosProducto(producto) {
   const exist = articulosCarrito.some(producto => producto.id === infoProducto.id)
   if (exist) {
     const productos = articulosCarrito.map(producto => {
-      if (producto.id === infoProducto.id) {
-        producto.cantidad++
-        return producto
-      } else {
-        return producto
-      }
+      producto.id === infoProducto.id ? producto.cantidad++ : producto //Operador ternario
     })
-    articulosCarrito = [...productos]
+    articulosCarrito = [...productos] //Spread Arrays
   } else {
-    articulosCarrito = [...articulosCarrito, infoProducto]
+    articulosCarrito = [...articulosCarrito, infoProducto] //Spread Arrays
   }
-
   carritoHTML()
 }
 
@@ -70,7 +65,6 @@ function eliminarProducto(e) {
   if (e.target.classList.contains('borrar-producto')) {
     const productoId = e.target.getAttribute('data-id')
     articulosCarrito = articulosCarrito.filter(producto => producto.id !== productoId);
-
     carritoHTML();
   }
 }
@@ -98,9 +92,9 @@ function carritoHTML() {
 
 //función para vaciar carrito
 function vaciarCarrito() {
-  
+
   while (contenedorCarrito.firstChild) {
     contenedorCarrito.removeChild(contenedorCarrito.firstChild);
   }
-  
+
 }
