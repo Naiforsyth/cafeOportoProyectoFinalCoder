@@ -6,7 +6,7 @@ const inputDireccion = document.querySelector("#inputDireccion")
 const btnSubmit = document.querySelector("#submit")
 let datosDeInput = ""
 
-btnSubmit.addEventListener("mousemove", ()=> {
+btnSubmit.addEventListener("mousemove", () => {
   btnSubmit.title = "Complete los datos antes de hacer el pedido"
 })
 
@@ -15,30 +15,31 @@ btnSubmit.addEventListener("mousemove", ()=> {
 document.addEventListener("submit", (e) => {
   e.preventDefault()
   guardarDatos()
-  alert(`Tu pedido esta en camino 🛵
-Gracias por su compra 😃`)
+  swal({
+    title: "Tu pedido esta en camino!! 🛵",
+    text: "Gracias por su compra!! 😃"
+  });
 })
 
-function guardarDatos(){
+function guardarDatos() {
   const datosdeUsr = {
-      nombre: inputNombre.value,
-      telefono: inputTelefono.value,
-      email: inputEmail.value,
-      direccion: inputDireccion.value
+    nombre: inputNombre.value,
+    telefono: inputTelefono.value,
+    email: inputEmail.value,
+    direccion: inputDireccion.value
   }
   let str = JSON.stringify(datosdeUsr)
   localStorage.setItem("datosDeUsr", str)
 }
 
-function recuperoDatosUsr(){
-  if(localStorage.getItem("datosDeUsr")){
-      const datosDeUsr = JSON.parse(localStorage.getItem("datosDeUsr"))
-          inputNombre.value = datosDeUsr.nombre
-          inputTelefono.value = datosDeUsr.telefono
-          inputEmail.value = datosDeUsr.email
-          inputDireccion.value = datosDeUsr.direccion
+function recuperoDatosUsr() {
+  if (localStorage.getItem("datosDeUsr")) {
+    const datosDeUsr = JSON.parse(localStorage.getItem("datosDeUsr"))
+    inputNombre.value = datosDeUsr.nombre
+    inputTelefono.value = datosDeUsr.telefono
+    inputEmail.value = datosDeUsr.email
+    inputDireccion.value = datosDeUsr.direccion
 
   }
 }
 recuperoDatosUsr()
-

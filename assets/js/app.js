@@ -3,6 +3,9 @@ document.querySelector("#cart-btn").onclick = () => {
   cartItem.classList.toggle('active');
 }
 
+document.querySelector("#cerrar-carrito").onclick = () => {
+  cartItem.classList.remove("active")
+}
 
 cargarEventListener()
 
@@ -50,7 +53,12 @@ function datosProducto(producto) {
   const exist = articulosCarrito.some(producto => producto.id === infoProducto.id)
   if (exist) {
     const productos = articulosCarrito.map(producto => {
-      producto.id === infoProducto.id ? producto.cantidad++ : producto //Operador ternario
+      if (producto.id === infoProducto.id) {
+        producto.cantidad++;
+        return producto;
+      } else {
+        return producto;
+      }
     })
     articulosCarrito = [...productos] //Spread Arrays
   } else {
@@ -66,7 +74,9 @@ function eliminarProducto(e) {
     const productoId = e.target.getAttribute('data-id')
     articulosCarrito = articulosCarrito.filter(producto => producto.id !== productoId);
     carritoHTML();
+    swal("Haz eliminado un producto del carrito!");
   }
+
 }
 
 //función para el template del producto en el carrito
@@ -87,7 +97,6 @@ function carritoHTML() {
     `
     contenedorCarrito.appendChild(row)
   })
-
 }
 
 //función para vaciar carrito
