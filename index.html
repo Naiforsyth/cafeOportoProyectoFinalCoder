@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/menu.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="./assets/js/productoClass.js"></script>
   <script defer src="./assets/js/variables.js"></script>
@@ -63,52 +64,14 @@
   </section>
 
   <section class="menu" id="box-menu">
-
     <h2 class="heading">Menú</h2>
-    <div class="box-container" id="box-container">
 
-      <div class="box">
-        <img src="./assets/img/menu-1.png" alt="" />
-        <h3>Café con leche</h3>
-        <div class="price">$15.99</div>
-        <a href="#" class="btn agregar-carrito" data-id="1">agregar</a>
-      </div>
-
-      <div class="box">
-        <img src="./assets/img/menu-2.png" alt="" />
-        <h3>Lágrima</h3>
-        <div class="price">$15.99</div>
-        <a href="#" class="btn agregar-carrito" data-id="2">agregar</a>
-      </div>
-
-      <div class="box">
-        <img src="./assets/img/menu-3.png" alt="" />
-        <h3>Café Americano</h3>
-        <div class="price">$15.99</div>
-        <a href="#" class="btn agregar-carrito" data-id="3">agregar</a>
-      </div>
-
-      <div class="box">
-        <img src="./assets/img/menu-4.png" alt="" />
-        <h3>Cafe Capuccino</h3>
-        <div class="price">$15.99</div>
-        <a href="#" class="btn agregar-carrito" data-id="4">agregar</a>
-      </div>
-
-      <div class="box">
-        <img src="./assets/img/menu-5.png" alt="" />
-        <h3>Café Mocaccino</h3>
-        <div class="price">$15.99</div>
-        <a href="#" class="btn agregar-carrito" data-id="5">agregar</a>
-      </div>
-
-      <div class="box">
-        <img src="./assets/img/menu-6.png" alt="" />
-        <h3>Café Bombon</h3>
-        <div class="price">$15.99</div>
-        <a href="#" class="btn agregar-carrito" data-id="6">agregar</a>
-      </div>
+    <div class="container-spinner">
+      <div class='spinner' id="spinner"></div>
     </div>
+
+    <div class="box-container" id="box-container">
+      <!-- Carga dinámica -->
   </section>
 
   <section class="contact" id="contact">
@@ -147,10 +110,11 @@
     </div>
 
     <div class="links">
-      <a href="#home">home</a>      
+      <a href="#home">home</a>
       <a href="#box-menu">menu</a>
       <a href="#contact">contacto</a>
     </div>
   </footer>
 </body>
+
 </html>

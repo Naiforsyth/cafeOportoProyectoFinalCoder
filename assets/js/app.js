@@ -16,20 +16,14 @@ function cargarEventListener() {
 }
 
 //Funciones
-//Función pafa cargar menú
-function cargarMenu() {
-  listaMenu.innerText = ""
-  productos.forEach((producto) => {
-    const item = `<div class=box>
-                  <img src="./assets/img/menu-1.png"/>
-                  <h3>${producto.nombre}</h3> 
-                  <div class="price"><span>$${producto.precio}</span></div>
-                  <a href="#" class="btn agregar-carrito" data-id="${producto.id}">agregar</a>
-                  </div>`
-    listaMenu.innerHTML += item
-  })
-}
-cargarMenu()
+
+
+document.addEventListener("DOMContentLoaded", ()=> {
+  setTimeout(() => {
+    obtenerMenu(URL)     
+  }, 1500);
+})
+
 
 //Función para agregar productos en el carrito
 function agregarProducto(e) {
