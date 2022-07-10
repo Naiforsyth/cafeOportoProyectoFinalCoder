@@ -1,12 +1,12 @@
 [{
     "id": 1,
-    "imagen": "/assets/img/menu-1.jpg",
+    "imagen": "./../assets/img/menu-1.jpg",
     "nombre": "Cafe con leche",
     "precio": 15
   },
   {
     "id": 2,
-    "imagen": "/assets/img/menu-2.jpg",
+    "imagen": "./../assets/img/menu-2.jpg",
     "nombre": "Lagrima",
     "precio": 10
   },
