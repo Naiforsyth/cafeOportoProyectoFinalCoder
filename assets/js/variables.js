@@ -6,9 +6,9 @@ const listaMenu = document.querySelector("#box-container")
 const contenedorCarrito = document.querySelector("#lista-carrito tbody")
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito")
 const spinner = document.querySelector("#spinner")
+const btnComprar = document.querySelector("#btnComprar")
 let articulosCarrito = [];
 let productos = []
-
 const URL = `assets/js/menu.json` 
 
 
