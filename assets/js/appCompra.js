@@ -65,7 +65,7 @@ sumarTotal()
 
 //Función para mostrar mensaje al hacer la compra
 function realizarCompra(e) {
-  if (sessionStorage.length > 1) {
+  if (sessionStorage.length > 0) {
     e.preventDefault()
     Swal.fire({
       title: "Tu pedido esta en camino!! 🛵",
