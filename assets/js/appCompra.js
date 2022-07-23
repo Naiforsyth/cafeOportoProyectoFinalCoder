@@ -65,7 +65,7 @@ sumarTotal()
 
 //Función para mostrar mensaje al hacer la compra
 function realizarCompra(e) {
-  if (sessionStorage.length > 0) {
+  if (sessionStorage.length === 0) {
     e.preventDefault()
     Swal.fire({
       title: "Tu pedido esta en camino!! 🛵",
@@ -77,21 +77,21 @@ function realizarCompra(e) {
     sessionStorage.removeItem("articulosCarrito")
     carritoCompra.innerHTML = ""
     totalCompra.innerHTML = ""
-  }else{
+  } else {
     Swal.fire({
       title: "Ooops!😅",
       text: "Realiza un pedido para confirmar tu compra!! 😊",
       showConfirmButton: true,
     }).then(function () {
       window.location = "index.html";
+    })
   }
-)}
 }
 
 //Función para eliminar Compra
 function borrarCompra() {
   if (sessionStorage.getItem("articulosCarrito")) {
-    const articulosCarrito = JSON.parse(sessionStorage.getItem("articulosCarrito"))    
+    const articulosCarrito = JSON.parse(sessionStorage.getItem("articulosCarrito"))
     if (articulosCarrito.length >= 1) {
       carritoCompra.innerHTML = ""
       totalCompra.innerHTML = ""
