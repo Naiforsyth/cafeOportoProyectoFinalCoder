@@ -68,6 +68,16 @@ function realizarCompra(e) {
   if (sessionStorage.length === 0) {
     e.preventDefault()
     Swal.fire({
+      title: "Ooops!😅",
+      text: "Realiza un pedido para confirmar tu compra!! 😊",
+      showConfirmButton: true,
+    }).then(function () {
+      window.location = "index.html";
+    })
+    
+  } else {
+    
+    Swal.fire({
       title: "Tu pedido esta en camino!! 🛵",
       text: "Gracias por su compra!! 😃",
       showConfirmButton: true,
@@ -77,14 +87,6 @@ function realizarCompra(e) {
     sessionStorage.removeItem("articulosCarrito")
     carritoCompra.innerHTML = ""
     totalCompra.innerHTML = ""
-  } else {
-    Swal.fire({
-      title: "Ooops!😅",
-      text: "Realiza un pedido para confirmar tu compra!! 😊",
-      showConfirmButton: true,
-    }).then(function () {
-      window.location = "index.html";
-    })
   }
 }
 
