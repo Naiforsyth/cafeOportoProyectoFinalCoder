@@ -12,7 +12,7 @@ cargarEventListenerCompra()
 
 function cargarEventListenerCompra() {
   hacerCompra.addEventListener("click", realizarCompra)
-  eliminarCompra.addEventListener("click", vaciarCarrito)
+  eliminarCompra.addEventListener("click", borrarCompra)
 }
 
 //Función para recuperar carrito del index
@@ -74,7 +74,6 @@ function realizarCompra(e) {
     }).then(function () {
       window.location = "index.html";
     })
-
     sessionStorage.removeItem("articulosCarrito")
     carritoCompra.innerHTML = ""
     totalCompra.innerHTML = ""
@@ -89,10 +88,10 @@ function realizarCompra(e) {
 )}
 }
 
-function vaciarCarrito() {
+//Función para eliminar Compra
+function borrarCompra() {
   if (sessionStorage.getItem("articulosCarrito")) {
-    const articulosCarrito = JSON.parse(sessionStorage.getItem("articulosCarrito"))
-    debugger
+    const articulosCarrito = JSON.parse(sessionStorage.getItem("articulosCarrito"))    
     if (articulosCarrito.length >= 1) {
       carritoCompra.innerHTML = ""
       totalCompra.innerHTML = ""

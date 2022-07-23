@@ -1,3 +1,17 @@
+//Variables 
+let navbar = document.querySelector('.navbar');
+const cartItem = document.querySelector(".cart-items-container");
+const carrito = document.querySelector("#carrito");
+const listaMenu = document.querySelector("#box-container")
+const contenedorCarrito = document.querySelector("#lista-carrito tbody")
+const vaciarCarritoBtn = document.querySelector("#vaciar-carrito")
+const spinner = document.querySelector("#spinner")
+const btnComprar = document.querySelector("#btnComprar")
+let articulosCarrito = [];
+let productos = []
+const URL = `assets/js/menu.json` 
+
+
 //Eventos
 document.querySelector("#cart-btn").onclick = () => {
   cartItem.classList.toggle('active');
@@ -96,13 +110,14 @@ function carritoHTML() {
 }
 
 
-
+//Función para guardar SessionsStorage
 function guardarCarrito() {
   if (articulosCarrito.length > 0) {
     sessionStorage.setItem("articulosCarrito", JSON.stringify(articulosCarrito))
   }
 }
 
+//Función para recuperar carritop del SessionStorage
 function recuperarCarrito() {
   if (miCarrito = JSON.parse(sessionStorage.getItem("articulosCarrito"))) {
     miCarrito.forEach(producto => {
@@ -113,7 +128,7 @@ function recuperarCarrito() {
 recuperarCarrito()
 
 
-
+//Función para borrar el carrito
 function borrarCarrito() {
   if (articulosCarrito.length > 0) {
     vaciarCarrito()
@@ -129,6 +144,7 @@ function vaciarCarrito() {
   sessionStorage.removeItem("articulosCarrito")
 }
 
+//Función para eliminar todos los productos
 function vaciarTodoCarrito() {
   if (articulosCarrito.length >= 1) {
     contenedorCarrito.remove(contenedorCarrito)
